@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Category"
+            android:id="@+id/tv_category"
+            android:textSize="20dp"
+            android:textColor="#000000"
+             />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="From"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:layout_marginTop="40dp"
+            android:id="@+id/tv_fromDate"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:visibility="invisible"
+            android:text="2015-03-31"
+            android:layout_marginTop="40dp"
+            android:id="@+id/et_fromDate"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:layout_marginTop="40dp"
+            android:id="@+id/tv_toDate"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:visibility="invisible"
+            android:text="2015-03-31"
+            android:layout_marginTop="40dp"
+            android:id="@+id/et_toDate"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="From "
+            android:onClick="pickDate"
+            android:id="@+id/btnPickFromDate"
+            android:textSize="20dp"
+            android:layout_marginTop="40dp"
+
+
+            android:textColor="#000000"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To "
+            android:onClick="pickDate"
+            android:id="@+id/btnPickToDate"
+            android:textSize="20dp"
+            android:layout_marginTop="40dp"
+
+            android:textColor="#000000" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

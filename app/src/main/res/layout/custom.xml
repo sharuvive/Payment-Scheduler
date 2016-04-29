@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+
+
+
+    <Button
+        android:id="@+id/Update"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:text="UPDATE"
+        android:layout_marginTop="19dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/Delete"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:text="DELETE"
+
+        android:layout_below="@+id/Update"
+        android:layout_alignLeft="@+id/Update"
+        android:layout_alignStart="@+id/Update" />
+
+    <Button
+        android:id="@+id/Done"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:text="DONE"
+        android:layout_below="@+id/Delete"
+        android:layout_alignLeft="@+id/Delete"
+        android:layout_alignStart="@+id/Delete" />
+
+</RelativeLayout>
