@@ -78,13 +78,13 @@ public class Expenses_activity extends Activity {
 
 
     }
-
+/*
     //when back button pressed
     public void onBackPressed() {
         Intent st = new Intent(Expenses_activity.this, MainActivity.class);
         startActivity(st);
         return;
     }
-
+*/
 
 }

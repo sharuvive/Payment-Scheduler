@@ -187,7 +187,8 @@ public class List_activity extends ActionBarActivity {
 
     private void fetchData3() {
         db = helper.getReadableDatabase();
-        Cursor c3 = db.query(DBhelper.TABLE2, null, DBhelper.CATEGORY + "='" + value + "'", null, null, null, null);
+        //Cursor c3 = db.query(DBhelper.TABLE2, null, DBhelper.CATEGORY + "='" + value + "'", null, null, null, null);
+        Cursor c3 = helper.getCategoryPayments(value);
         adapter3 = new SimpleCursorAdapter(
                 this,
                 R.layout.row3,

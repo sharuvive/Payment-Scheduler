@@ -46,7 +46,7 @@
         android:id="@+id/lstMonth"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
-        android:layout_toStartOf="@id/btn_viewPayments"
+        android:layout_toLeftOf="@id/btn_viewPayments"
         android:layout_below="@+id/btn_viewPayments"
         android:layout_alignRight="@+id/month"
         android:layout_alignEnd="@+id/month" />

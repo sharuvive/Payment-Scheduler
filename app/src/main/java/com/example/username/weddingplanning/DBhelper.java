@@ -82,6 +82,29 @@ public class DBhelper extends SQLiteOpenHelper {
         return arrayList;
     }
 
+    String status = "onDue";
+
+    public boolean insertData(String _date, String _category, String _description, String _amount, String _year, String _month)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DATE_T1, _date);
+        contentValues.put(CATEGORY, _category);
+        //contentValues.put(T1_SubCategory, _subcategory);
+        contentValues.put(DETAIL, _description);
+        contentValues.put(STATUS, status);
+        contentValues.put(EX_YEAR, _year);
+        contentValues.put(EX_MONTH, _month);
+        contentValues.put(AMOUNT1, _amount);
+        long result = db.insert(TABLE2, null, contentValues);
+
+        if(result == -1)
+            return false;
+        else
+            return true;
+
+    }
+
     public Cursor getAllData()
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -96,20 +119,27 @@ public class DBhelper extends SQLiteOpenHelper {
         return result;
     }
 
+    public Cursor getCategoryPayments(String category)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor result = db.rawQuery("select * from " + TABLE2 + " where " +CATEGORY+ " = '" + category +"' AND " +STATUS+ " = 'onDue'", null);
+        return result;
+    }
+
     //Done button
     public void markDone(String id)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor row = db.rawQuery("select "+DETAIL+"from"+TABLE1+"where "+ID1+"="+id , null);
+        Cursor row = db.rawQuery("select "+DETAIL+" from "+TABLE1+" where "+ID1+" = "+id , null);
         String done = row.toString()+"done";
-        db.execSQL("update " + TABLE1 + "set " + DETAIL + "=" + done + "where" + ID1 + "=" + id);
+        db.execSQL("update " + TABLE1 + " set " + DETAIL + " = " + done + " where " + ID1 + " = " + id);
     }
 
     public Cursor getMonthlyPayments(String month)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         int monthVal = getMonthInt(month);
-        Cursor result = db.rawQuery("select * from " + TABLE2 + "where" +EX_MONTH+ "=" + monthVal, null);
+        Cursor result = db.rawQuery("select * from " + TABLE2 + " where " +EX_MONTH+ " = " + monthVal, null);
         return result;
     }
 

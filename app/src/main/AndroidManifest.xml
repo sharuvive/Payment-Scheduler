@@ -38,6 +38,8 @@
             android:name=".addPayment"></activity>
         <activity android:name="org.achartengine.GraphicalActivity">
         </activity>
+        <service android:name="payment.scheduler.notification.NotifyService"/>
+        <service android:name="payment.scheduler.notification.ScheduleService"/>
     </application>
 
 </manifest>
